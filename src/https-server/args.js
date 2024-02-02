@@ -11,7 +11,7 @@ const parseBody = req => new Promise(resolve => {
 
 
 export default fn => async (req, res) => {
-    const parsedUrl = new URL(req.url, 'http://localhost')
+   const parsedUrl = new URL(req.url, `http://${req.headers.host}`);
     const searchParams = Object.fromEntries(parsedUrl.searchParams.entries())
 
     let jsonBody
