@@ -3,7 +3,7 @@ import { pub } from "../pubsub.js";
 import { URL } from 'url';
 
 export default fn => async (req, res) => {
-    const url = new URL(req.url, 'http://localhost');
+    const url = new URL(req.url, `http://${req.headers.host}`);
 
     const foundRoute = findRoute(req.method, url.pathname);
 
