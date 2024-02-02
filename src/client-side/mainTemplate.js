@@ -191,7 +191,7 @@ function showUpdateForm(id) {
         .then(response => response.json())
         .then(data => {
           alert('Car updated successfully!');
-          showAllCars(); // Refresh the car list after update
+          showAllCars();
         })
         .catch(error => {
           console.error('Error:', error);
